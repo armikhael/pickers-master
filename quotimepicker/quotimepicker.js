@@ -36,18 +36,17 @@ quoTimePicker = (function(quo) {
     picker.id = "quoTimePicker";
     picker.innerHTML = '<div class="tcontainer">'+
                           '<div class="hcontainer">'+
-                            '<p id="plush" class="plustime timebutton">+</p>'+
-                            '<input class="thours timeinput" size="2" maxlength="2" type="number" max="23" min="00" format="[0-9]*"/>'+
-                            '<span>:</span>'+
+                            '<p id="plush" class="plustime timebutton"><i class="fa fa-chevron-up icon-24x"></i></p>'+
+                            '<input id="timeinput" class="thours timeinput" size="2" maxlength="2" type="number" max="23" min="00" format="[0-9]*"/>'+
                             '<div style="clear:both;"></div>'+
-                            '<p id="minush" class="minustime timebutton">-</p>'+
+                            '<p id="minush" class="minustime timebutton"><i class="fa fa-chevron-down"></i></p>'+
                           '</div>'+
                           '<div class="mcontainer">'+
-                            '<p id="plusm" class="plustime timebutton">+</p>'+
-                            '<input class="tminutes timeinput" size="2" maxlength="2" type="number" max="59" min="00" pattern="[0-9]*"/>'+
+                            '<p id="plusm" class="plustime timebutton"><i class="fa fa-chevron-up"></i></p>'+
+                            '<input id="timeinput" class="tminutes timeinput" size="2" maxlength="2" type="number" max="59" min="00" pattern="[0-9]*"/>'+
                             '<div style="clear:both;"></div>'+
-                            '<p id="minusm" class="minustime timebutton">-</p></div>'+
-                            '<div class="accept action-button blue">OK</div>'+
+                            '<p id="minusm" class="minustime timebutton"><i class="fa fa-chevron-down"></i></p></div>'+
+                            '<div class="accept action-button blue">OK <i class="fa fa-check"></i></div>'+
                           '</div>'+
                         '</div>';
     input.parentNode.insertBefore(picker, input.nextSibling);
@@ -71,8 +70,8 @@ quoTimePicker = (function(quo) {
   setSize = function() {
     var buttonwidth, containerWidth, inputwidth;
     if (!window.quomobile) {
-      buttonwidth = (350 / 2) - 3;
-      inputwidth = buttonwidth - 20;
+      buttonwidth = (150 / 2) - 3;
+      inputwidth = buttonwidth - 10;
       quo('.timebutton').style('width', "" + buttonwidth + "px");
       return quo('input.timeinput').style('width', "" + inputwidth + "px");
     } else {

@@ -25,20 +25,20 @@
   margin-bottom: 2px;
   margin-top: 2px;
   padding: 3px 0px;
-  background-color: #d4d5d7;
+  /*background-color: #d4d5d7;*/
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #000;
+  color: #3498DB;
   font-size: 25px;
   line-height: 25px;
   text-align: center;
   cursor:pointer;  
-  background-color: #F2CF66;
-  border-bottom: 5px solid #D1B358;
+  /*background-color: #F2CF66;
+  border-bottom: 5px solid #D1B358;*/
 }
 .plustime{
   -webkit-border-top-left-radius: 10px;
@@ -81,12 +81,21 @@
   text-shadow: 0px -2px #2980B9;
 }
 .thours , .tminutes, .timebutton, .accept{
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
   text-align: center;
 }
 .timeinput{
   float:left;
+}
+
+#timeinput{
+  height: 60px;
+  background-color: #56a8f1;
+  color: #FFF;
+  text-align: center;
+  border-radius: 0px;
+  
 }
 
 @media only screen and (max-width: 980px){
