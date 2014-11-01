@@ -57,30 +57,48 @@
   border-bottom-left-radius: 10px;
 }
 .accept{
-  border-top: 2px solid #d4d5d7;
+  border-top: 2px solid #f4f5f5;
   color: #d4d5d7;
-  clear: both;
   text-align: center;
   font-family:Sans-serif, serif;
-  cursor:pointer;
-  width: 100%;
+  width:50px;
+  cursor: pointer;
 }
-.action-button{
-  position: relative;
-  padding: 10px 0px;
+.action-button-accept{
+  display: inline;
+  padding: 10px 13px;
   float: left;
   border-radius: 5px;
   font-family: 'Pacifico', cursive;
   font-size: 25px;
-  color: #FFF;
+  color: #56a8f1;
   text-decoration: none;  
 }
-.blue{
-  background-color: #3498DB;
-  border-bottom: 5px solid #2980B9;
-  text-shadow: 0px -2px #2980B9;
+.close{
+  border-top: 2px solid #f4f5f5;
+  color: #d4d5d7;
+  text-align: center;
+  font-family:Sans-serif, serif;
+  width:50px;
+  cursor: pointer;
 }
-.thours , .tminutes, .timebutton, .accept{
+.action-button-close{
+  display: inline;
+  padding: 10px 13px;
+  float: left;
+  border-radius: 5px;
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+  color: #939393;
+  text-decoration: none;  
+}
+
+.gris{
+  background-color: #f4f5f5;
+  border-bottom: 5px solid #f4f5f5;
+  text-shadow: 0px -2px #f4f5f5;
+}
+.thours , .tminutes, .timebutton, .accept, .close{
   font-size: 1em;
   font-weight: bold;
   text-align: center;
@@ -95,7 +113,6 @@
   color: #FFF;
   text-align: center;
   border-radius: 0px;
-  
 }
 
 @media only screen and (max-width: 980px){
@@ -113,5 +130,6 @@
 @media screen and (min-width: 980px){
   .tcontainer{
     width:350px;
+    top:35px;
   }
 }
