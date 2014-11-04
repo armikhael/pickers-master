@@ -34,9 +34,10 @@ quoTimePicker = (function(quo) {
     removePicker();
     picker = document.createElement('div');
     picker.id = "quoTimePicker";
-    picker.innerHTML = 
+    picker.innerHTML =  '<div class="button-box">'+
                         '<div class="close action-button-close gris"><i class="fa fa-close"></i></div>'+
                         '<div class="accept action-button-accept gris"><i class="fa fa-check"></i></div>'+
+                        '</div>'+
                         '<div class="tcontainer">'+
                           '<div class="hcontainer">'+
                             '<p id="plush" class="plustime timebutton"><i class="fa fa-chevron-up icon-24x"></i></p>'+
@@ -49,7 +50,6 @@ quoTimePicker = (function(quo) {
                             '<input id="timeinput" class="tminutes timeinput" size="2" maxlength="2" type="number" max="59" min="00" pattern="[0-9]*"/>'+
                             '<div style="clear:both;"></div>'+
                             '<p id="minusm" class="minustime timebutton"><i class="fa fa-chevron-down"></i></p></div>'+
-                            
                           '</div>'+
                         '</div>';
     input.parentNode.insertBefore(picker, input.nextSibling);
