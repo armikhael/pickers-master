@@ -90,8 +90,8 @@ quoTimePicker = (function(quo) {
     bgr = quo('#quoTimePicker');
     if (window.quomobile) {
       pickwin = bgr.children('.tcontainer');
-      pickwin.style('margin-left', "" + ((bgr[0].offsetWidth - pickwin[0].offsetWidth) / 2) + "px");
-      return pickwin.style('margin-top', "" + ((bgr[0].offsetHeight - pickwin[0].offsetHeight) / 2) + "px");
+      //pickwin.style('margin-left', "" + ((bgr[0].offsetWidth - pickwin[0].offsetWidth) / 2) + "px");
+      //return pickwin.style('margin-top', "" + ((bgr[0].offsetHeight - pickwin[0].offsetHeight) / 2) + "px");
     } else {
       margLeft = input.offsetLeft;
       margTop = input.offsetTop;
