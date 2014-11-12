@@ -63,7 +63,7 @@ quoDatePicker = (function(quo) {
                         '</div>'+
                         '<div class="accept action-button blue">OK</div>'+
                       '</div>';
-    input.parentNode.insertBefore(picker);
+    input.parentNode.insertBefore(picker, input.nextSibling);
     setSize();
     setPosition(input);
     datebutton = quo('.datebutton');
