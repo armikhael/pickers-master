@@ -34,7 +34,24 @@ quoTimePicker = (function(quo) {
     removePicker();
     picker = document.createElement('div');
     picker.id = "quoTimePicker";
-    picker.innerHTML = '<div class="tcontainer"><div class="hcontainer"><p id="plush" class="plustime timebutton">+</p><input class="thours timeinput" size="2" maxlength="2" type="number" max="23" min="00" format="[0-9]*"/><span>:</span><div style="clear:both;"></div><p id="minush" class="minustime timebutton">-</p></div><div class="mcontainer"><p id="plusm" class="plustime timebutton">+</p><input class="tminutes timeinput" size="2" maxlength="2" type="number" max="59" min="00" pattern="[0-9]*"/><div style="clear:both;"></div><p id="minusm" class="minustime timebutton">-</p></div><div class="accept">OK</div></div>';
+    picker.innerHTML = '<div class="tcontainer">'+
+                          '<div class="button-box">'+
+                          '<div class="accept action-button-accept"><i class="fa fa-check"></i></div>'+
+                          '<div class="close action-button-close"><i class="fa fa-close"></i></div>'+
+                          '</div>'+
+                          '<br></br>'+
+                          '<br></br>'+
+                          '<div class="hcontainer">'+
+                            '<p id="plush" class="plustime timebutton"><i class="fa fa-chevron-up icon-24x"></i></p>'+
+                              '<input class="thours timeinput" size="2" maxlength="2" type="number" max="23" min="00" format="[0-9]*"/>'+
+                            '<div style="clear:both;"></div>'+
+                            '<p id="minush" class="minustime timebutton"><i class="fa fa-chevron-down"></i></p>'+
+                          '</div><div class="mcontainer">'+
+                            '<p id="plusm" class="plustime timebutton"><i class="fa fa-chevron-up icon-24x"></i></p>'+
+                              '<input class="tminutes timeinput" size="2" maxlength="2" type="number" max="59" min="00" pattern="[0-9]*"/>'+
+                            '<div style="clear:both;"></div><p id="minusm" class="minustime timebutton"><i class="fa fa-chevron-down"></i></p>'+
+                            '</div>'+
+                          '</div>';
     input.parentNode.insertBefore(picker, input.nextSibling);
     setSize();
     setPosition(input);
@@ -56,15 +73,17 @@ quoTimePicker = (function(quo) {
   setSize = function() {
     var buttonwidth, containerWidth, inputwidth;
     if (!window.quomobile) {
-      buttonwidth = (350 / 2) - 3;
+      buttonwidth = (400 / 3) - 3;
       inputwidth = buttonwidth - 20;
       quo('.timebutton').style('width', "" + buttonwidth + "px");
+      $$('input.timeinput').style('height', "" + (buttonwidth - 50) + "px");
       return quo('input.timeinput').style('width', "" + inputwidth + "px");
     } else {
-      containerWidth = Quo.environment().screen.width / 2;
+      containerWidth = Quo.environment().screen.width - 60;
       $$('.tcontainer').style('width', "" + containerWidth + "px");
       buttonwidth = (containerWidth / 2) - 3;
       $$('.timebutton').style('width', "" + buttonwidth + "px");
+      $$('input.timeinput').style('height', "" + (70) + "px");
       return $$('input.timeinput').style('width', "" + (buttonwidth - 20) + "px");
     }
   };
@@ -74,7 +93,7 @@ quoTimePicker = (function(quo) {
     if (window.quomobile) {
       pickwin = bgr.children('.tcontainer');
       pickwin.style('margin-left', "" + ((bgr[0].offsetWidth - pickwin[0].offsetWidth) / 2) + "px");
-      return pickwin.style('margin-top', "" + ((bgr[0].offsetHeight - pickwin[0].offsetHeight) / 2) + "px");
+      return pickwin.style('margin-top', "" + ((bgr[0].offsetHeight - pickwin[0].offsetHeight) / 40) + "px");
     } else {
       margLeft = input.offsetLeft;
       margTop = input.offsetTop;
