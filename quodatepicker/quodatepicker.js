@@ -40,28 +40,29 @@ quoDatePicker = (function(quo) {
     picker = document.createElement('div');
     picker.id = "quoDatePicker";
     picker.innerHTML = '<div class="dateContainer">'+
+                          '<div class="accept action-button-accept"><i class="fa fa-check"></i></div>'+
+                          '<div class="close action-button-close"><i class="fa fa-close"></i></div>'+
+                          '<br></br>'+
+                          '<br></br>'+
                           '<div class="actualDate"></div>'+
                           '<div class="dcontainer">'+
-                          '<p id="plusd" class="plusdate datebutton">+</p>'+
+                          '<p id="plusd" class="plusdate datebutton"><i class="fa fa-chevron-up icon-24x"></i></p>'+
                           '<input class="tdays dateinput"  maxlength="2" type="number" max="31" min="1" format="[0-9]*"/>'+
-                          '<span>/</span>'+
                           '<div style="clear:both"></div>'+
-                          '<p id="minusd" class="minusdate datebutton">-</p>'+
+                          '<p id="minusd" class="minusdate datebutton"><i class="fa fa-chevron-down"></i></p>'+
                         '</div>'+
                         '<div class="mcontainer">'+
-                          '<p id="plusm" class="plusdate datebutton">+</p>'+
+                          '<p id="plusm" class="plusdate datebutton"><i class="fa fa-chevron-up icon-24x"></i></p>'+
                           '<input class="tmonths dateinput" size="2" maxlength="2" type="number" max="12" min="1" format="[0-9]*"/>'+
-                          '<span>/</span>'+
                           '<div style="clear:both"></div>'+
-                          '<p id="minusm" class="minusdate datebutton">-</p>'+
+                          '<p id="minusm" class="minusdate datebutton"><i class="fa fa-chevron-down"></i></p>'+
                         '</div>'+
                         '<div class="ycontainer">'+
-                          '<p id="plusy" class="plusdate datebutton">+</p>'+
+                          '<p id="plusy" class="plusdate datebutton"><i class="fa fa-chevron-up icon-24x"></i></p>'+
                           '<input class="tyears dateinput" size="4" maxlength="4" type="number" max="9999" min="00" format="[0-9]*"/>'+
                           '<div style="clear:both"></div>'+
-                          '<p id="minusy" class="minusdate datebutton">-</p>'+
-                        '</div>'+
-                        '<div class="accept action-button blue">OK</div>'+
+                          '<p id="minusy" class="minusdate datebutton"><i class="fa fa-chevron-down"></i></p>'+
+                        '</div>'+  
                       '</div>';
     input.parentNode.insertBefore(picker, input.nextSibling);
     setSize();
@@ -88,12 +89,14 @@ quoDatePicker = (function(quo) {
       buttonwidth = (400 / 3) - 3;
       inputwidth = buttonwidth - 20;
       quo('.datebutton').style('width', "" + buttonwidth + "px");
+      $$('input.dateinput').style('height', "" + (buttonwidth - 50) + "px");
       return quo('input.dateinput').style('width', "" + inputwidth + "px");
     } else {
       containerWidth = Quo.environment().screen.width - 60;
       $$('.dateContainer').style('width', "" + containerWidth + "px");
       buttonwidth = (containerWidth / 3) - 3;
       $$('.datebutton').style('width', "" + buttonwidth + "px");
+      $$('input.dateinput').style('height', "" + (70) + "px");
       return $$('input.dateinput').style('width', "" + (buttonwidth - 18) + "px");
     }
   };
@@ -103,7 +106,7 @@ quoDatePicker = (function(quo) {
     if (window.quomobile) {
       pickwin = bgr.children('.dateContainer');
       pickwin.style('margin-left', "" + ((bgr[0].offsetWidth - pickwin[0].offsetWidth) / 2) + "px");
-      return pickwin.style('margin-top', "" + ((bgr[0].offsetHeight - pickwin[0].offsetHeight) / 2) + "px");
+      return pickwin.style('margin-top', "" + ((bgr[0].offsetHeight - pickwin[0].offsetHeight) / 40) + "px");
     } else {
       margLeft = input.offsetLeft;
       margTop = input.offsetTop;

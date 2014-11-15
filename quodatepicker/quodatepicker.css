@@ -22,20 +22,20 @@
   margin-bottom: 2px;
   margin-top: 2px;
   padding: 3px 0px;
-  background-color: #d4d5d7;
+  /*background-color: #d4d5d7;*/
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #000;
+  color: #56a8f1;
   font-size: 25px;
   line-height: 25px;
   text-align: center;
   cursor:pointer;  
-  background-color: #F2CF66;
-  border-bottom: 5px solid #D1B358;
+  /*background-color: #F2CF66;
+  border-bottom: 5px solid #D1B358;*/
 }
 .plusdate{
   -webkit-border-top-left-radius: 10px;
@@ -54,22 +54,32 @@
   border-bottom-left-radius: 10px;
 }
 .accept{
-  border-top: 2px solid #d4d5d7;
-  color: #d4d5d7;
-  clear: both;
-  line-height: 25px;
-  text-align: center;
-  font-family:tahoma;
-  cursor:pointer;
-  width: 100%;
+  /*border-top: 2px solid #d4d5d7;*/
+  /*color: #d4d5d7;*/
+  /*clear: both;*/
+  /*line-height: 25px;*/
+  text-align: right;
+  /*font-family:tahoma;*/
+  /*cursor:pointer;*/
+  /*width: 100%;*/
 }
-.action-button{
+.action-button-accept{
+  position: relative;
+  padding: 10px 0px;
+  float: right;
+  /*border-radius: 5px;*/
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;  
+}
+.action-button-close{
   position: relative;
   padding: 10px 0px;
   float: left;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   font-family: 'Pacifico', cursive;
-  font-size: 25px;
+  font-size: 20px;
   color: #FFF;
   text-decoration: none;  
 }
@@ -78,11 +88,12 @@
   border-bottom: 5px solid #2980B9;
   text-shadow: 0px -2px #2980B9;
 }
-.action-button:active,
+.action-button-accept:active,
+.action-button-close:active,
 .datebutton:active{
   transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
-  border-bottom: 1px solid;
+  /*border-bottom: 1px solid;*/
 }
 .actualDate{
   margin: 15px 0px;
@@ -97,11 +108,13 @@
   padding: 10px 0px;
 }
 .dateinput{
+  background: #56a8f1;
+  color: white;
   float: left;
 }
 @media only screen and (max-width: 980px){
   #quoDatePicker{
-    top: 0;
+    top: 5%;
     left:0;
     position: absolute;
     z-index: 1;
